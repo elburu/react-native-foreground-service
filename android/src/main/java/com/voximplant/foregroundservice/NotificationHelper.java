@@ -124,7 +124,8 @@ class NotificationHelper {
         notificationBuilder.setContentTitle(notificationConfig.getString("title"))
                 .setContentText(notificationConfig.getString("text"))
                 .setPriority(priority)
-                .setContentIntent(pendingIntent);
+                .setContentIntent(pendingIntent)
+                ..setVisibility(Notification.VISIBILITY_SECRET);
 
         String iconName = notificationConfig.getString("icon");
         if (iconName != null) {
